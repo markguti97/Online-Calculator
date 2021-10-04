@@ -7,7 +7,8 @@ const App = () => {
 
     const handleClick = (e) =>{                             // számok és operátorok begépelése
         if(result !== "Error"){
-            setResult(result.concat(e.target.name));
+            if(result.length <= 15)
+                setResult(result.concat(e.target.name));
         }
         else{
             setResult("");
