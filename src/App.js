@@ -39,7 +39,7 @@ const App = () => {
     }
 
     const storeNumber = async () => {                                   // kijelzőn lévő szám elmentése külön fájlba
-            const equal2 = new Promise((resolve, reject) => {           // eredményszámolás Promise-szal
+            const equalAndFetch = new Promise((resolve, reject) => {           // eredményszámolás Promise-szal
                 if(result === "Error")
                     reject("Error")
                 try{
@@ -50,7 +50,7 @@ const App = () => {
                     reject("Error")
                 }
             })
-            equal2.then((message) => {                                    // valid érték esetén elküldjük a tárolni kívánt számot/eredményt a szervernek
+            equalAndFetch.then((message) => {                                    // valid érték esetén elküldjük a tárolni kívánt számot/eredményt a szervernek
                 fetch("/store", {
                 method: "POST",
                 headers: {
