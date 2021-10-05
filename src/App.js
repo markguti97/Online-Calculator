@@ -17,11 +17,14 @@ const App = () => {
     }
 
     const equal = () => {                                   // eredményszámolás
+        if(result !== "Error"){
         try{
             setResult(eval(result).toString());
         }catch(err) {
             setResult("Error")
-        }
+        }}
+        else    
+            setResult("Error")
     }
 
     const clear = () => {                                   // teljes kijelző törlése
